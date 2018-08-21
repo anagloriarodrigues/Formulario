@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <title> Formulário </title>
+   
+       </head>
+    <body>
+       <form name = "dados" action="processa" method="post" onsubmit = "return enviardados();">
+	  
+	      <b><p style="font-size:22px;">Cadastro</p></b>
+				Nome:<input type="text" id="tx_nome"name="nome" size=30><br/><br/>
+				
+				Sexo:<input type="radio" name ="sexo" id="tx_sexom" value"M"> Masculino <input type="radio" id="txt_sexof" name ="sexo" value"F"> Feminino</td></br>
+				<br/>
+				E-mail:<input type="text" id="tx_email"name="email" size=30><br/>
+				<br/>
+				
+				Cargo:  
+					<select name="cargo">
+					<option value="0">Selecione uma opção</option>
+					<option value="1">Técnico Judiciário</option>
+					<option value="2">Analista Judiciário</option>
+								
+				</select>
+				</br></br>
+			
+				<input name="Submit" type="submit"  <value="Enviar"> 
+				<input name="Reset" type="reset" value="Redefinir">
+        
+	   <form\>
+	   
+	   <script language="javascript">
+	   	  function enviardados(){
+		  
+	  if (document.dados.tx_nome.value=="" || document.dados.tx_nome.value.length < 8)
+		{
+		alert( "Preencha campo NOME corretamente!" );
+		document.dados.tx_nome.focus();
+		return false;
+       }
+   
+	if(document.dados.tx_email.value=="" || document.dados.tx_email.value.indexOf('@')==-1 || document.dados.tx_email.value.indexOf('.')==-1 )
+	{
+		alert( "Preencha campo E-MAIL corretamente!" );
+		document.dados.tx_email.focus();
+		return false;
+	}
+	if(document.dados.cargo.selectedIndex=="")
+	{
+		alert( "Preencha o campo FORMAÇÃO!" );
+		document.dados.formacao.focus();
+		return false;
+	}
+	
+	return true; 
+
+ }
+</script>
+	   
+	   
+	   
+	  </body>
+
+<html\>	
