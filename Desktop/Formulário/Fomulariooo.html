@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <meta charset="UTF-8">
    <title> Formulário </title>
-   
-       </head>
+	 
+          </head>
     <body>
        <form name = "dados" action="processa" method="post" onsubmit = "return enviardados();">
 	  
@@ -12,8 +13,9 @@
 				
 				Sexo:<input type="radio" name ="sexo" id="tx_sexom" value"M"> Masculino <input type="radio" id="txt_sexof" name ="sexo" value"F"> Feminino</td></br>
 				<br/>
-				E-mail:<input type="text" id="tx_email"name="email" size=30><br/>
-				<br/>
+				E-mail:<input type="text" id="tx_email"name="email" size=30><br/><br/>
+	
+	                        Data de nascimento: <input type="date" name="data" id="tx_data"><br/><br/>
 				
 				Cargo:  
 					<select name="cargo">
@@ -45,14 +47,23 @@
 		document.dados.tx_email.focus();
 		return false;
 	}
+	if(document.dados.tx_data.value=="")
+	{ 
+		alert ("Preencha o campo DATA");
+		return false;
+	}
 	if(document.dados.cargo.selectedIndex=="")
 	{
 		alert( "Preencha o campo FORMAÇÃO!" );
 		document.dados.formacao.focus();
 		return false;
 	}
+	else(document.dados.tx_enviar.value=="Enviar")
+	{
+	alert ("Cadastro efetuado com sucesso");
+	return true;		  
+	}		  
 	
-	return true; 
 
  }
 </script>
